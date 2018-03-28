@@ -13,9 +13,9 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=dll
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gaddis_8thed_chap4_pro3_magicdates
-OUTPUT_BASENAME=gaddis_8thed_chap4_pro3_magicdates
-PACKAGE_TOP_DIR=gaddis8thedchap4pro3magicdates/
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gaddis_8thed_chap4_prob3_magicdates
+OUTPUT_BASENAME=gaddis_8thed_chap4_prob3_magicdates
+PACKAGE_TOP_DIR=gaddis8thedchap4prob3magicdates/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/gaddis8thedchap4pro3magicdates/bin"
+makeDirectory "${NBTMPDIR}/gaddis8thedchap4prob3magicdates/bin"
 copyFileToTmpDir "${OUTPUT_PATH}.exe" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}.exe" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/gaddis8thedchap4pro3magicdates.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/gaddis8thedchap4prob3magicdates.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/gaddis8thedchap4pro3magicdates.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/gaddis8thedchap4prob3magicdates.tar *
 checkReturnCode
 
 # Cleanup

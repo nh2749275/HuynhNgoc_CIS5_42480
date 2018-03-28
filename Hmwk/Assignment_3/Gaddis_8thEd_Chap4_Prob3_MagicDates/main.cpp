@@ -19,7 +19,10 @@ using namespace std;//namespace I/O stream library created
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
-    float date, month, year, magcDte;
+    float date, // any date of the month
+          month,// 2-digit month 
+          year, // 2-digit year
+          magcDte; //magic date if date*month is year entered
     //Initial Variables
     date = 6;
     month = 10;
@@ -35,6 +38,7 @@ int main(int argc, char** argv) {
     cout << "Enter 2-digit of the year" << endl;
     cin >> year;
     magcDte = date * month;
+    
     if (magcDte == year)
         cout << "It's a Magic Date" << endl;
     else
