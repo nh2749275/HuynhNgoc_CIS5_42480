@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Problem 6
+PROJECTNAME=Gaddis_8thEd_Chap3_Prob6_IngredientAdjuster
 
 # Active Configuration
 DEFAULTCONF=Debug

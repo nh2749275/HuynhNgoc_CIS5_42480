@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=problem_8
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/problem_8
+CND_ARTIFACT_NAME_Debug=gaddis_8thed_chap3_prob8_howmanywidgets
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/gaddis_8thed_chap3_prob8_howmanywidgets
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=problem8.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/problem8.tar
+CND_PACKAGE_NAME_Debug=gaddis8thedchap3prob8howmanywidgets.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/gaddis8thedchap3prob8howmanywidgets.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=problem_8
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/problem_8
+CND_ARTIFACT_NAME_Release=gaddis_8thed_chap3_prob8_howmanywidgets
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/gaddis_8thed_chap3_prob8_howmanywidgets
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=problem8.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/problem8.tar
+CND_PACKAGE_NAME_Release=gaddis8thedchap3prob8howmanywidgets.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/gaddis8thedchap3prob8howmanywidgets.tar
 #
 # include compiler specific variables
 #

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Problem 5
+PROJECTNAME=Gaddis_8thEd_Chap3_Prob5_MaleFemalePercentage
 
 # Active Configuration
 DEFAULTCONF=Debug
