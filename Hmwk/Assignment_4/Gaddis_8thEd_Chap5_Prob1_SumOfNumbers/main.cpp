@@ -27,7 +27,8 @@ int main(int argc, char** argv) {
     //Process/Map inputs to outputs
     while (num < 0)
     {
-        cout << "Please enter positive integer only " << endl;
+        cout << "Please enter "
+                "only " << endl;
         cin >> num;
     }
     for (int count = 1; count <= num; count ++)

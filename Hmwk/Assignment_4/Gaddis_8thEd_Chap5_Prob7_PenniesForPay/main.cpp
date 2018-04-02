@@ -1,14 +1,13 @@
 /* 
  * File:   main.cpp
  * Author: Ngoc Huynh
- * Created on March 30th, 2018, 3:13 AM
+ * Created on March 30th, 2018, 3:13 PM
  * Purpose:  This program calculates salary of each day and total after a period of time
  */
 
 //System Libraries
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 
 using namespace std;
 
