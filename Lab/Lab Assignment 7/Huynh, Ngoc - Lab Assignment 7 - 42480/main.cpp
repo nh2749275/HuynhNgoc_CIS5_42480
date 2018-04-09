@@ -221,7 +221,7 @@ int main(int argc, char** argv) {
                         case 5: 
 
                             cout << "You have quit program.";
-                            return 0;
+                            break;
 
                         default: 
                             cout << "Error. Please choose different option!" << endl;            
@@ -235,6 +235,8 @@ int main(int argc, char** argv) {
                             cout << "You have the correct answer!" << endl;
                         else
                             cout << "You got it wrong! The answer is " << correct << endl;
+                    } else if (choice == 5) {
+                        break;
                     }
 
                 }
