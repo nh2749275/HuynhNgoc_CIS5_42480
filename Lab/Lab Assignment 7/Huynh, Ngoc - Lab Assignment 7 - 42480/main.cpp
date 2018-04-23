@@ -220,7 +220,7 @@ int main(int argc, char** argv) {
 
                         case 5: 
 
-                            cout << "You have quit program.";
+                            cout << "You have quit the math tutor program.";
                             break;
 
                         default: 
