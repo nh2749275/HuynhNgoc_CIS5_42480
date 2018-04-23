@@ -158,28 +158,28 @@ int main(int argc, char** argv) {
                     break;
                 }
                 case 7: {
-                    int sum3 = 0; // sum of all dice 
+                    int sum7 = 0; // sum of all dice 
                     int* dcTemp = dice;
                     sort(dcTemp, dcTemp + 6);
                     int temp = 0; // dice 0 2, 2, 2, 3, 5 // 3,5,2,3, 4
-                    int total3 = 1; //total3 is number of dice that are the same
+                    int total7 = 1; //total3 is number of dice that are the same
                     
                     out = true;
                     for (int a = 1; a <= 5; a++){
                         //cout << dice[a] << endl;
                         // 3 == 3
-                        sum3 += dice[a];
+                        sum7 += dice[a];
                         if (temp == dice[a])
-                            total3++; // total3 = 3
-                        else if (total3 != 3)
-                            total3 = 1; // reset number of dices that are the same to 1
+                            total7++; // total3 = 3
+                        else if (total7 != 3)
+                            total7 = 1; // reset number of dices that are the same to 1
                         else { 
-                            cout << "Your score is " << sum3 << endl;
+                            cout << "Your score is " << sum7 << endl;
                             break;
                         } 
                         temp = dice[a]; // temp = 2;
                     }
-                    if (total3 != 3) {
+                    if (total7 != 3) {
                         cout << "You don't have 3 of a kind. Please choose another field." << endl;
                         cin >> choice;
                         out = false;
@@ -187,73 +187,102 @@ int main(int argc, char** argv) {
                     break;
                 }
                 case 8: {
-                    int sum4 = 0; // sum of all dice 
+                    int sum8 = 0; // sum of all dice 
                     int* dcTemp = dice;
                     sort(dcTemp, dcTemp + 6);
                     int temp = 0; // dice 0 2, 3, (3), 3, 3 
-                    int total4 = 1; //total3 is number of dice that are the same
+                    int total8 = 1; //total3 is number of dice that are the same
                     
                     out = true;
                     for (int a = 1; a <= 5; a++){
                         //cout << dice[a] << endl;
                         // 3 == 3
-                        sum4 += dice[a];
+                        sum8 += dice[a];
                         if (temp == dice[a])
-                            total4++; // total4 = 4
-                        else if (total4 != 4)
-                            total4 = 1; // reset number of dices that are the same to 1}
-                        else 
-                            cout << "Your score is " << sum4 << endl;
+                            total8++; // total4 = 4
+                        else if (total8 != 4)
+                            total8 = 1; // reset number of dices that are the same to 1}
+                        else {
+                            cout << "Your score is " << sum8 << endl;
                             break; 
+                        }
                         temp = dice[a]; // temp = 2;
                     }
-                    if (total4 != 4) { 
+                    if (total8 != 4) { 
                             cout << "You don't have 4 of a kind. Please choose another field." << endl;
                             cin >> choice;
                             out = false;
-                        }
+                    }
                     break;
                 }
                 case 9: {
+                    int sum9 = 25; 
                     cout << "Your score is 25" << endl;
                     break;
                 }
                 case 10: {
+                    int sum10 = 30;
                     cout << "Your score is 30" << endl;
                     break;
                 }
                 case 11: {
+                    int sum11 = 40;
                     cout << "Your score is 40" << endl;
                     break;
                 }
+                case 12: {
+                    int sum12; // sum of all dice 
+                    int* dcTemp = dice;
+                    int temp = 0; // dice 0 2, 3, (3), 3, 3 
+                    int total12 = 1; //total3 is number of dice that are the same
+                    out = true;
+                    for (int a = 1; a <= 5; a++){
+                        //cout << dice[a] << endl;
+                        // 3 == 3
+                        if (temp == dice[a])
+                            total12++; // total4 = 4
+                        else if (total12 != 5)
+                            total12 = 1; // reset number of dices that are the same to 1}
+                        else {
+                            cout << "Yahtzee! Your score is 50" << endl;
+                            break; 
+                        }
+                        temp = dice[a]; // temp = 2;
+                    }
+                    if (total12 != 5) { 
+                            cout << "It's not Yahtzee! Please choose another field." << endl;
+                            cin >> choice;
+                            out = false;
+                    }
+                    break;
+                }
                 case 13: {
-                    int sumrand = 0; // sum of all dice 
+                    int sum13 = 0; // sum of all dice 
                     int temp = 0; // dice 0 2, 2, 2, 3, 5 // 3,5,2,3, 4
-                    int totrand = 1; //total3 is number of dice that are the same
+                    int tot13 = 1; //total3 is number of dice that are the same
                     
                     out = true;
                     for (int a = 1; a <= 5; a++){
                         //cout << dice[a] << endl;
                         // 3 == 3
-                        sumrand += dice[a];
+                        sum13 += dice[a];
                         if (temp == dice[a]){
-                            totrand++; // total3 = 3
+                            tot13++; // total3 = 3
                         } else {
-                            totrand = 1; // reset number of dices that are the same to 1
+                            tot13 = 1; // reset number of dices that are the same to 1
                         }
                     }
-                    cout << "Your score is " << sumrand << endl;
+                    cout << "Your score is " << sum13 << endl;
                     break;
                 }
                 default: {
                     break;
                 }
             }
+            total = sumOf[1] + sumOf[2] + sumOf[3] + sumOf[4] + sumOf[5] + sumOf[6]
+                    + sum7 + sum8 + 25 + 30 + 40 + 50 + sum13;
         }
         
-    }
-    for (int i = 1; i <=6; i++){
-        total += sumOf[i];
     }
     cout << "You've finished the game! Your total score is " << total << endl;
     
