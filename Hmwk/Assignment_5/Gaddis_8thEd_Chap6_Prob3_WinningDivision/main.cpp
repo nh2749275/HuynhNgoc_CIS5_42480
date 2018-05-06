@@ -8,6 +8,7 @@
 //System Libraries
 #include <iostream>
 #include <iomanip>
+#include <string>
 using namespace std;
 
 //User Libraries
@@ -16,38 +17,57 @@ using namespace std;
 //                   2-D Array Dimensions
 
 //Function Prototypes
-float calculateRetail(float, float);
+float getSales(string);
+void findHighest (float, float, float, float);
       
 //Execution Begins Here
-float whSale, // wholesale cost entered by user
-      pcntage, // markup percentage
-      retail; // retail of the item 
-    
+float NE, SE, NW, SW, // sales of 4 divisions, Northeast, Southeast, Northwest, Southwest
+      maxSale; // greatest sale
+        
 int main(int argc, char** argv) {
-    //Declare Variables
-    
     //Initialize Variables
-    cout << fixed << showpoint << setprecision (2);
+    
     //Process/Map inputs to outputs
+    cout << fixed << showpoint << setprecision (2);
+    cout << "Please enter positive sales for NE : $";
+    cin >> NE;
+    cout << "Please enter positive sales for SE : $";
+    cin >> SE;
+    cout << "Please enter positive sales for NW : $";
+    cin >> NW;
+    cout << "Please enter positive sales for SW : $";
+    cin >> SW;
     
-    cout << "Please enter positive wholesale cost and positive percentage" << endl;
-    cin >> whSale >> pcntage;
-    
-    while (whSale < 0 || pcntage < 0){
-    cout << "Please enter positive wholesale cost and positive percentage" << endl;
-    cin >> whSale >> pcntage;
-    }
-    
-    retail = calculateRetail(whSale, pcntage);
-    cout << "The item's retail price is: $" << retail << endl;
-    
-    return 0;
+    findHighest (NE, SE, NW, SW);
 }
-    //Output data
-   
-    float calculateRetail(float sale, float pcntge){
-        float total = 0;
-        total = sale + sale * pcntge/100;
-        return total;
-    }
-    //Exit stage right!
+
+float getSales(string name){
+        float sales = 0;
+        cout << "Please enter sale for division " << name;
+        cin >> name;
+        return sales;
+}
+
+void findHighest (float NE,float SE, float NW, float SW ){
+    string divsion = "";
+    
+        if (NE >= SE && NE >=NW and SE >=SW){
+            maxSale = NE;
+            divsion = "Northeast";
+        }
+        else if (SE >= NE && SE >= NW && NE >=SW) {
+            maxSale = SE;
+            divsion = "Southeast";    
+        }
+        else if (NW >= NE && NW >= SE && NE >=SW) {
+            maxSale = NW;
+            divsion = "Northwest";    
+        }
+        else {
+            maxSale = SW;
+            divsion = "Southwest";    
+            }
+        cout << "The division with greatest sale is " << divsion << " with a sale of $" << maxSale << endl;
+}
+
+//Exit stage right!
