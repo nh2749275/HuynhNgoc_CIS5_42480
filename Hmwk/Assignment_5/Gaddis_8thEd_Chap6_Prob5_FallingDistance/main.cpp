@@ -16,7 +16,7 @@ using namespace std;
 //                   2-D Array Dimensions
 
 //Function Prototypes
-float fallingDistance(int);
+float Dstnce(int);
 
 //Execution Begins Here
 int  t; // time the object falls, in seconds
@@ -27,13 +27,13 @@ int main(int argc, char** argv) {
     
     cout << "The distance the object has fallen in 10 seconds is: " << endl;
     for (int i = 1; i <= 10; i++){
-        d = fallingDistance (i);
+        d = Dstnce (i);
         cout << i << " seconds: " << d << " m" << endl;
     }
     return 0;
 }
 
-float fallingDistance (int t){ 
+float Dstnce (int t){ 
     float d = 0.0f;
     d = (0.5) * (9.8) * (pow (t,2));
     return d;

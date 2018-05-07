@@ -16,7 +16,7 @@ using namespace std;
 //                   2-D Array Dimensions
 
 //Function Prototypes
-float kineticEnergy(float, float);
+float KEnergy(float, float);
       
 //Execution Begins Here
 float m, // mass of object entered by user in kilograms
@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
     cout << "Please enter positive mass in kilogram and positive velocity in m/s" << endl;
     cin >> m >> v;
     }
-    KE = kineticEnergy(m, v);
+    KE = KEnergy(m, v);
     cout << "The object's kinetic energy is: " << KE << " kg*m/s-squared" << endl;
     
     return 0;
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     //Output data
 
 
-float kineticEnergy(float mass, float vel){
+float KEnergy(float mass, float vel){
 
     float KEnergy = 0.0f;
     KEnergy = (0.5) * mass * (pow (vel,2));

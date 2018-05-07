@@ -16,8 +16,8 @@ using namespace std;
 //                   2-D Array Dimensions
 
 //Function Prototypes
-float getSales(string);
-void findHighest (float, float, float, float);
+float getSale(string);
+void highest (float, float, float, float);
       
 //Execution Begins Here
 float NE, SE, NW, SW, // sales of 4 divisions, Northeast, Southeast, Northwest, Southwest
@@ -37,17 +37,17 @@ int main(int argc, char** argv) {
     cout << "Please enter positive sales for SW : $";
     cin >> SW;
     
-    findHighest (NE, SE, NW, SW);
+    highest (NE, SE, NW, SW);
 }
 
-float getSales(string name){
+float getSale(string name){
         float sales = 0.0f;
         cout << "Please enter sale for division " << name;
         cin >> name;
         return sales;
 }
 
-void findHighest (float NE,float SE, float NW, float SW ){
+void highest (float NE,float SE, float NW, float SW ){
     string divsion = "";
     
         if (NE >= SE && NE >=NW and SE >=SW){

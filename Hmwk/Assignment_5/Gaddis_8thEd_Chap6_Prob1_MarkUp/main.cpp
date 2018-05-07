@@ -16,7 +16,7 @@ using namespace std;
 //                   2-D Array Dimensions
 
 //Function Prototypes
-float calculateRetail(float, float);
+float Retail(float, float);
       
 //Execution Begins Here
 float whSale, // wholesale cost entered by user
@@ -38,14 +38,14 @@ int main(int argc, char** argv) {
     cin >> whSale >> pcntage;
     }
     
-    retail = calculateRetail(whSale, pcntage);
+    retail = Retail(whSale, pcntage);
     cout << "The item's retail price is: $" << retail << endl;
     
     return 0;
 }
     //Output data
    
-    float calculateRetail(float sale, float pcntge){
+    float Retail(float sale, float pcntge){
         float total = 0.0f;
         total = sale + sale * pcntge/100;
         return total;
