@@ -34,8 +34,8 @@ int main(int argc, char** argv) {
 }
 
 float fallingDistance (int t){ 
-    float d = 0;
-    d = (1/2) * 9.8 * (pow (t,2));
+    float d = 0.0f;
+    d = (0.5) * (9.8) * (pow (t,2));
     return d;
 }
 

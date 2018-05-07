@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Ngoc Huynh
  * Created on May 6, 2018, 5:16 PM
- * Purpose:  This program calculates the distance an object falls in 10 seconds
+ * Purpose:  This program calculates the kinetic energy of an object
  */
 
 //System Libraries
@@ -16,28 +16,39 @@ using namespace std;
 //                   2-D Array Dimensions
 
 //Function Prototypes
-float fallingDistance(int);
-
+float kineticEnergy(float, float);
+      
 //Execution Begins Here
-int  t; // time the object falls, in seconds
-float d; // distance the object falls at a certain time, in meter
-        
-int main(int argc, char** argv) {
-//Process/Map inputs to outputs
+float m, // mass of object entered by user in kilograms
+      v, // velocity of object entered by user in meter/second
+      KE; // kinetic energy = 1/2mv^2
     
-    cout << "The distance the object has fallen in 10 seconds is: " << endl;
-    for (int i = 1; i <= 10; i++){
-        d = fallingDistance (i);
-        cout << i << " seconds: " << d << " m" << endl;
+int main(int argc, char** argv) {
+    //Declare Variables
+    
+    //Initialize Variables
+    
+    //Process/Map inputs to outputs
+    
+    cout << "Please enter positive mass in kilogram and positive velocity in m/s" << endl;
+    cin >> m >> v;
+    
+    while (m < 0 || v < 0){
+    cout << "Please enter positive mass in kilogram and positive velocity in m/s" << endl;
+    cin >> m >> v;
     }
+    KE = kineticEnergy(m, v);
+    cout << "The object's kinetic energy is: " << KE << " kg*m/s-squared" << endl;
+    
     return 0;
 }
+    //Output data
 
-float fallingDistance (int t){ 
-    float d = 0;
-    d = (1/2) * 9.8 * (pow (t,2));
-    return d;
+
+float kineticEnergy(float mass, float vel){
+
+    float KEnergy = 0.0f;
+    KEnergy = (0.5) * mass * (pow (vel,2));
+    return KEnergy;
 }
-
-
 //Exit stage right!

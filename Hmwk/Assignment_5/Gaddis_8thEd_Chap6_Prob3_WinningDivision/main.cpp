@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
 }
 
 float getSales(string name){
-        float sales = 0;
+        float sales = 0.0f;
         cout << "Please enter sale for division " << name;
         cin >> name;
         return sales;

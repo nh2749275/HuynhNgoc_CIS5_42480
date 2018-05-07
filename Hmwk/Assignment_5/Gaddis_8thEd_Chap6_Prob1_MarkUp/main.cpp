@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
     //Output data
    
     float calculateRetail(float sale, float pcntge){
-        float total = 0;
+        float total = 0.0f;
         total = sale + sale * pcntge/100;
         return total;
     }
