@@ -7,7 +7,6 @@
 
 //System Libraries
 #include <iostream>
-#include <iomanip>
 #include <string>
 using namespace std;
 
@@ -28,7 +27,7 @@ int main(int argc, char** argv) {
     //Initialize Variables
     
     //Process/Map inputs to outputs
-    cout << fixed << showpoint << setprecision (2);
+    
     cout << "Please enter positive sales for NE : $";
     cin >> NE;
     cout << "Please enter positive sales for SE : $";
