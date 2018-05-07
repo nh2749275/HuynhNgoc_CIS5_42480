@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=huynh__ngoc_-_lab_assignment_7_-_42480
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/huynh__ngoc_-_lab_assignment_7_-_42480
+CND_ARTIFACT_NAME_Debug=gaddis_8thed_10thprob_menuofallproblems
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/gaddis_8thed_10thprob_menuofallproblems
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=huynh,ngoc-labassignment7-42480.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/huynh,ngoc-labassignment7-42480.tar
+CND_PACKAGE_NAME_Debug=gaddis8thed10thprobmenuofallproblems.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/gaddis8thed10thprobmenuofallproblems.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=huynh__ngoc_-_lab_assignment_7_-_42480
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/huynh__ngoc_-_lab_assignment_7_-_42480
+CND_ARTIFACT_NAME_Release=gaddis_8thed_10thprob_menuofallproblems
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/gaddis_8thed_10thprob_menuofallproblems
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=huynh,ngoc-labassignment7-42480.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/huynh,ngoc-labassignment7-42480.tar
+CND_PACKAGE_NAME_Release=gaddis8thed10thprobmenuofallproblems.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/gaddis8thed10thprobmenuofallproblems.tar
 #
 # include compiler specific variables
 #

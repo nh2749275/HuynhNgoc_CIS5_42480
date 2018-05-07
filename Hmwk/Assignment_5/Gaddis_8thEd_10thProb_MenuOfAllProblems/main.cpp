@@ -137,279 +137,228 @@ int main(int argc, char** argv) {
                             cout << "The division with greatest sale is " << divsion << " with a sale of $" << maxSale << endl;
                     }
                 break;
-            case 3: 
-                cout << "You chose Problem 3" << endl;
-                int level, //ocean level in millimeters
-                    year; // number of year up to 25 years     
-                float total; //total = year * 1.5
+            case 5: 
+                cout << "You chose Problem 5" << endl;
+                float Dstnce(int);
 
-                //Initialize Variables
-                level = 1.5; // each year ocean rises 1.5 mm
-                year = 1;        
+                //Execution Begins Here
+                int  t; // time the object falls, in seconds
+                float d; // distance the object falls at a certain time, in meter
+
+                int main(int argc, char** argv) {
                 //Process/Map inputs to outputs
 
-                //Output data
-                cout << "Year" << "\t" << "Level risen (mm)" << endl; 
-                while (year <= 25 && year > 0)
-                {
-                    cout << fixed << showpoint << setprecision(1) << endl;
-                    cout << year << "\t" << (year *1.5) << endl;
-                    year ++;
+                    cout << "The distance the object has fallen in 10 seconds is: " << endl;
+                    for (int i = 1; i <= 10; i++){
+                        d = Dstnce (i);
+                        cout << i << " seconds: " << d << " m" << endl;
+                    }
+                    return 0;
                 }
-                break;
-            case 4: 
-                cout << "You chose Problem 4" << endl;
-                for (int i = 5; i <= 30; i += 5) // i = minute in increment of 5 min
-                {
-                    cout << "Calories burned in " << i << " minutes is " << (3.6 * i) << endl;
+
+                float Dstnce (int t){ 
+                    float d = 0.0f;
+                    d = (0.5) * (9.8) * (pow (t,2));
+                    return d;
                 }
+
                 break;
             case 6: 
                 cout << "You chose Problem 6" << endl;
-                float speed, //speed of the vehicle in mph
-                      dstnce; //distance the vehicle travel in miles
-                int   hour; // hours the vehicle traveled in hour
-                cout << "What is the speed of the vehicle in mph?" << endl; 
-                cin >> speed;
-                cout << "How many hours has it traveled?" << endl;
-                cin >> hour;
-                cout << "Hour" << "\t" << "Distance traveled(mile)" << endl;
-                cout << "------------------------------" << endl;
+                float KEnergy(float, float);
+      
+                //Execution Begins Here
+                float m, // mass of object entered by user in kilograms
+                      v, // velocity of object entered by user in meter/second
+                      KE; // kinetic energy = 1/2mv^2
 
-                while (hour < 1)
-                {
-                    cout << "Time must be integer and greater than 0 " << endl;
-                    cin >> hour;
+                int main(int argc, char** argv) {
+                    //Declare Variables
+
+                    //Initialize Variables
+
+                    //Process/Map inputs to outputs
+
+                    cout << "Please enter positive mass in kilogram and positive velocity in m/s" << endl;
+                    cin >> m >> v;
+
+                    while (m < 0 || v < 0){
+                    cout << "Please enter positive mass in kilogram and positive velocity in m/s" << endl;
+                    cin >> m >> v;
+                    }
+                    KE = KEnergy(m, v);
+                    cout << "The object's kinetic energy is: " << KE << " kg*m/s-squared" << endl;
+
+                    return 0;
                 }
-                for (int count = 1; count <= hour; count ++)
-                {
-                    cout << fixed << showpoint << setprecision(1) << endl;
-                    cout << count << "\t\t" << (count * speed) << endl;
+                    //Output data
+
+
+                float KEnergy(float mass, float vel){
+
+                    float KEnergy = 0.0f;
+                    KEnergy = (0.5) * mass * (pow (vel,2));
+                    return KEnergy;
                 }
                 break;
             case 7: 
                 cout << "You chose Problem 7" << endl;
-                float salary; //salary of each day in dollars
-                //      total; //total salary in dollars
-                int   days, // number of days worked
-                      pennies; // number of pennies paid each day
+                float celsius(float);
 
-                //Output data
-                cout << "How many days do you work?" << endl; 
-                cin >> days;
+                //Execution Begins Here
+                float   F, // degrees in Fahrenheit
+                        C; // degrees in Celsius
 
-                cout << "Days" << "\t" << "Salary of each day " << endl;
-                cout << "------------------------------" << endl;
+                int main(int argc, char** argv) {
+                //Process/Map inputs to outputs
 
-                while (days < 1)
-                {
-                    cout << "Number of days must be integer and greater than 0 " << endl;
-                    cin >> days;
+                    cout << fixed << setprecision (2);
+                    cout << "This list displays degrees in Fahrenheit from 0 to 20 and Celsius" << endl;
+                    cout << setw(10) << "Fahrenheit" << "\t\t" << "Celsius" << endl;
+                        for (int i = 0; i <= 20; i++){
+                        C = celsius(i);
+                        cout << setw(5) << i << "\t\t\t" << C << endl;
+                    }
+                    return 0;
                 }
-                salary = 0.01;
-                total = 0;
 
-                for (int count = 1; count <= days; count ++) {        
-                    cout << fixed << showpoint << setprecision(2) << endl;
-                    cout << count << "\t\t $" << salary << endl;
-                    total += salary;
-                    salary *= 2;        
-                }   
-                cout << "-------------------------" << endl;
-                cout << "Total" << "\t\t $" << total << endl;
+                float celsius (float Fah){ 
+                    float Cel = 0.0f;
+                    Cel = (5.0/9.0) * (Fah - 32);
+                    return Cel;
+                }
                 break;
             case 8: 
-                cout << "You chose Problem 8" << endl;
-                srand(static_cast<unsigned int>(time(0)));
+                int cnToss(void){
 
-                //Declare Variables
-                float op1,op2, sol,correct;
-
-                //Initial Variables
-
-                int choice;
-
-                while (true)
-                {
-                    cout << "Choose from the menu below." << endl;
-                    cout << " Enter 1 for problem with addition." << endl;
-                    cout << " Enter 2 for problem with subtraction." << endl;
-                    cout << " Enter 3 for problem with multiplication." << endl;
-                    cout << " Enter 4 for problem with division." << endl;
-                    cout << "1. Addition." << endl;
-                    cout << "2. Subtraction." << endl;
-                    cout << "3. Multiplication." << endl;
-                    cout << "4. Division." << endl;
-                    cout << "5. Quit." << endl;
-                    cin >> choice;
-
-                    op1=rand()%999+1;//[1,999]
-                    op2=rand()%999+1;  //[1,999]
-                    switch (choice)
-                    {
-                        case 1:
-
-                            cout << "You chose addition problem" << endl;
-                            cout<<setw(5)<<op1<<endl;
-                            cout<<"+ "<<setw(3)<<op2<<endl;
-                            cout<<"-----"<<endl;
-                            correct = op1 + op2;
-
-                            break;
-
-                        case 2:
-
-                            cout << "You chose subtraction problem" << endl;
-                            cout<<setw(5)<<op1<<endl;
-                            cout<<"- "<<setw(3)<<op2<<endl;
-                            cout<<"-----"<<endl;
-                            correct = op1 - op2;
-
-                            break;
-
-                        case 3 : 
-
-                            cout << "You chose multiplication problem" << endl;
-                            cout<<setw(5)<<op1<<endl;
-                            cout<<"x "<<setw(3)<<op2<<endl;
-                            cout<<"-----"<<endl;
-                            correct = op1 * op2;
-
-                            break;
-
-                        case 4 :
-
-                            cout << "You chose division problem" << endl;
-                            cout<<setw(5)<<op1<<endl;
-                            cout<<"/ "<<setw(3)<<op2<<endl;
-                            cout<<"-----"<<endl;
-                            correct = op1 / op2;
-
-                            break;
-
-                        case 5: 
-
-                            cout << "You have quit the math tutor program.";
-                            break;
-
-                        default: 
-                            cout << "Error. Please choose different option!" << endl;            
-                    }
-
-                    if (choice < 5 && choice > 0)
-                    {
-                        cout << "Please enter your solution: ";
-                        cin >> sol;
-                        if (correct == sol) 
-                            cout << "You have the correct answer!" << endl;
-                        else
-                            cout << "You got it wrong! The answer is " << correct << endl;
-                    } else if (choice == 5) {
-                        break;
-                    }
-
-                }
-                break;
-            case 10: 
-                cout << "You chose Problem 10" << endl;
-                float rnfll, //user inputs rainfall for each month, in inches
-                //      total, //total rainfall for the entire period, in inches
-                      avg; // average rainfall for each month, in inches
-                int   months, // total of months rained 
-                      years; // number of years of rainfall
-
-                //Initialize Variables
-                rnfll = 0;
-                total = 0;
-                avg = 0;
-                months = 0;
-                years = 0;
-
-                //Output data
-                cout << "How many years has it rained?" << endl; 
-                cin >> years;
-
-                while (years < 1)
-                {
-                    cout << "Number of year must be >1." << endl;
-                    cin >> years;
-                }
-                while (rnfll < 0)
-                {
-                    cout << "Rainfall must be positive " << endl;
-                    cin >> rnfll;
-                } 
-                total = 0; //initialize accumulator
-                for (int year = 1; year <= years; year ++)
-                {   
-                    cout << "Year " << year << endl;
-
-                    for (int month = 1; month <= 12; month ++)
-                    {
-                        cout << "Enter rainfall amount in inches for month " << month << ":\t";
-                        cin >> rnfll;    
-                        total += rnfll;
-                    }
-                }   
-                avg = total/(12*years);
-                months = 12 * years; 
-                cout << fixed << showpoint << setprecision(1) << endl;
-                cout << "The number of months rained is " << months << endl;
-                cout << "The total rainfall is " << total << endl;
-                cout << "Average rainfall for each month is " << avg << endl;
-                break;
-            case 13:
-                cout << "You chose Problem 13" << endl;
-                int x, // user inputs a series of integers
-                    greatest, //largest integer in the series 
-                    least;  // smallest integer in the series
-                //Initialize Variables
-                x = 0;
-                greatest = -999999;
-                least = 9999999;
-                //Output data
-                cout << "Enter a series of integer and -99 to stop" << endl;
-
-                while (x != -99) 
-                {     
-                    cin >> x;
-                    if (x < least) {
-                        least = x;
-                    }
-
-                    if (x > greatest) {
-                        greatest = x;
-                    }
-
-                }        
-                cout << "Greatest number: " << greatest << endl;
-                cout << "Least number: " << least << endl;
-                break;
-            case 20:
-                cout << "You chose Problem 20" << endl;
-                int //x, // user inputs guessing number
+                //Execution Begins Here
+                int x, // number of time of tossing of the coin 
                     rndnum; // random number generated by the program
 
-                x = 0;
-                srand(static_cast<unsigned int>(time(0)));
+                    rndnum = rand() % 2 + 1; //[1,2]
+                    return rndnum;
+                }
+                int main(int argc, char** argv) {
+                //Process/Map inputs to outputs
+                int x = 0, // number of time of tossing of the coin 
+                    rndnum = 0; // random number generated by the program  
 
-                rndnum = rand()%999+1; //[1,999]
-                cout << "Guess a number from 1 - 999.";
-
-                while (x != rndnum)
-                {
+                    cout << "How many number do you want to toss the coin?" << endl;
                     cin >> x;
-                    if (x > rndnum)
-                        cout << "Too high, try again." << endl;
-                    else if (x < rndnum)
-                        cout << "Too low, try again." << endl;
-                    else
-                        cout << "You guessed it right!" << endl;
+
+                    for (int i = 1 ; i <= x; i++){
+                        rndnum = cnToss();
+                        if (rndnum == 1)
+                            cout << "head" << endl;
+                        if (rndnum == 2)
+                            cout << "tail" << endl;
+                    }
                 }
                 break;
-            case 0:
-                cout << "You quit the program. Bye Bye!" << endl;
-                return 0;
+            case 9: 
+                cout << "You chose Problem 9" << endl;
+                float present(float, float, int);
+
+                float   F, // future amount of money in savings account, in this case $10,000 
+                        P, // present amount of money in savings account
+                        i; // annual interest rate
+                int     y; // number of years, in this case 10 years 
+
+                int main(int argc, char** argv) {
+                //Process/Map inputs to outputs
+
+                    cout << "Please enter the account's future value: $";
+                    cin >> F;
+                    cout << "Please enter monthly interest rate: ";
+                    cin >> i;
+                    cout << "Please enter number of years: ";
+                    cin >> y;
+                    P = present(F, i, y);
+                    cout << fixed << showpoint << setprecision(2);
+                    cout << "You need to deposit a value of $" << P << " to have $10,000 after 10 years" << endl;
+                    return 0;
+                }
+                float present (float future, float intrst, int year){
+                float result = 0;
+                    result = (future) / (pow ((1.0 + intrst),year));
+                    return result;
+                }    
+                break;
+            case 10:
+                cout << "You chose Problem 10" << endl;
+                float future(float, float, int);
+
+                float   F, // future amount of money in savings account 
+                        P, // present amount of money in savings account
+                        i; // monthly interest rate
+                int     t; // number of months 
+
+                int main(int argc, char** argv) {
+                //Process/Map inputs to outputs
+
+                    cout << "Please enter the account's present value: $";
+                    cin >> P;
+                    cout << "Please enter monthly interest rate: ";
+                    cin >> i;
+                    cout << "Please enter number of months:";
+                    cin >> t;
+                    F = future(P, i, t);
+                    cout << "Your future value after " << t << " months is $" << F << endl;
+                    return 0;
+                }
+                float future (float present, float intrst, int month){
+                float result = 0;
+                    result = (present) * (pow ((1.0 + intrst),month));
+                    return result;
+                }    
+                break;
+            case 16:
+                cout << "You chose Problem 16" << endl;
+                int ppltion(int, float, float, int);
+
+                float   DP, // death rate 
+                        BP; // birth rate
+                int     P, // previous population size
+                        N, // number of years, in this case 10 years 
+                        y; // number of years
+                int main(int argc, char** argv) {
+                //Process/Map inputs to outputs
+
+                    cout << "Please enter the previous population size:";
+                    cin >> P;
+                    cout << "Please enter birth rate in %: ";
+                    cin >> BP;
+                    cout << "Please enter death rate in %: " ;
+                    cin >> DP;
+                    cout << "Please enter number of year: ";
+                    cin >> y;
+
+                    while (P < 2 || BP < 0 || DP < 0 || y < 1){
+                        cout << "Population must be greater or equal to 2 " << endl;
+                        cout << "Birth rate and death rate must be positive " << endl;
+                        cout << "Number of years must be greater or equal to 1 year" << endl;
+                    cout << "Please enter the previous population size:";
+                    cin >> P;
+                    cout << "Please enter birth rate in %: ";
+                    cin >> BP;
+                    cout << "Please enter death rate in %: " ;
+                    cin >> DP;
+                    cout << "Please enter number of year: ";
+                    cin >> y;
+                    }
+
+
+
+                    N = ppltion(P, BP, DP, y);
+
+                    cout << "The size of new population after " << y << " years is: " << N << endl;
+                    return 0;
+                }
+                int ppltion(int prvious, float drate, float brthrte, int year){
+                int result = 0;
+                    result = prvious + (prvious * brthrte/100) - (prvious * drate/100);
+                    return result;
+                }    
             default:
                 cout << "Error. Please choose number form listed." << endl;
         }
