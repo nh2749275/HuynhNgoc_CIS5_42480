@@ -111,7 +111,7 @@ int main(int argc, char** argv) {
         cout << "9. Full house -> score is 25" << endl;
         cout << "10.Small straight (sequence of 4)-> score is 30" << endl;
         cout << "11.Large straight (sequence of 5)-> score is 40" << endl;
-        cout << "12.Yahtzee(all five dice the same)-> score is 50" << endl;
+        cout << "12.Yahtzee! -> score is 50" << endl;
         cout << "13.Chance (any combination)-> sum of all dice" << endl;
         cin >> choice;
         
@@ -171,7 +171,7 @@ int main(int argc, char** argv) {
                     for (int a = 1; a <= 5; a++){
                         //cout << dice[a] << endl;
                         // 3 == 3
-                        sum7 += dice[a];
+                        total7 += dice[a];
                         if (temp == dice[a])
                             total7++; // total3 = 3
                         else if (total7 != 3)
