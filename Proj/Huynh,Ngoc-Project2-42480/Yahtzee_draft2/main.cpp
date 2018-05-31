@@ -55,7 +55,10 @@ int main(int argc, char** argv) {
     int total, // total score on 5 dice 
         choice, // user chooses when to start game and when to quit game
         dice[6], // dice[0], dice[1], dice[2], dice[3],dice[4], dice[5]
-        sumOf[7];// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]  
+        sumOf[7];// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
+    float average; // average of score of 1 person after a certain games
+    string name[3]; // name of 3 players
+    
     unsigned seed = time (0);
     srand (seed); 
     total = 0;
@@ -171,7 +174,7 @@ int main(int argc, char** argv) {
                     for (int a = 1; a <= 5; a++){
                         //cout << dice[a] << endl;
                         // 3 == 3
-                        total7 += dice[a];
+                        sum7 += dice[a];
                         if (temp == dice[a])
                             total7++; // total3 = 3
                         else if (total7 != 3)
@@ -282,7 +285,7 @@ int main(int argc, char** argv) {
                     break;
                 }
             }
-            total = sumOf[1] + sumOf[2] + sumOf[3] + sumOf[4] + sumOf[5] + sumOf[6]
+            total = sumOf[1] + sumOf[2] + sumOf[3] + sumOf[4] + sumOf[5] + sumOf[6] 
                     + sum7 + sum8 + 25 + 30 + 40 + 50 + sum13;
         }
         

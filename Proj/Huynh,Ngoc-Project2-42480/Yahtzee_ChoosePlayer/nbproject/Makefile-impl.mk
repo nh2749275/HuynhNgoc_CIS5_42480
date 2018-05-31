@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Huynh_Ngoc-Project2-42480_draft1
+PROJECTNAME=CPP_Template
 
 # Active Configuration
 DEFAULTCONF=Debug
