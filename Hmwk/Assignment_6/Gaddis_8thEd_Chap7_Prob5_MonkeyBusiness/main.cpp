@@ -17,7 +17,7 @@ using namespace std;
 //                   2-D Array Dimensions
 
 //Function Prototypes
-
+void show(int, int);
 //Execution Begins Here
 
 int main(int argc, char** argv) {
@@ -26,8 +26,8 @@ int main(int argc, char** argv) {
     
     int   sizeM = 3, // 3 monkeys
           sizeD = 9, // 7 days 
-          monkey[3],
-          food[7], // store amount of food eaten by each monkey in lbs.
+          monkey,
+          food, // store amount of food eaten by each monkey in lbs.
           table, //2-D array dimension stores data for 3 monkeys and 7
           least, // the least amount of food eaten by a monkey
           great, // the greatest amount of food eaten by a monkey
@@ -52,7 +52,6 @@ int main(int argc, char** argv) {
                         cout << "Enter the food eaten by " << endl;
                         cout << "Monkey " << m + 1 << ", ";
                         cout << "Day " << f << ": ";
-                        cin >> food[f];
                     }
                     cin >> table[monkey][food];
                     total[sizeM] += food[f];
@@ -75,18 +74,16 @@ int main(int argc, char** argv) {
     }
     
     //Output
-    for (int x = 0; x < 3; x++){
-        for (int y = 1; y < 8; y++){
-            cout << setw(4) << table << " ";
-            cout << setw(4) << monkey[3] << food[7] << endl;
-        }
-    }
     
-    cout << endl;
-    cout << "Total" << total[count] << endl;
-    cout << "Highest Sales = " << lstMnky << endl;
-    cout << "Lowest Sales = " << grtMnky << endl;
+  
     return 0;
 }
-    
+  void show(int table[monkey], int food){
+    for (int x=0; x < 3; x++){
+        for (int y = 0; y < 8; y++){
+        cout << setw(4) << table[x][y];
+        cout << endl;
+        }
+    }  
+  }
     //Exit stage right!
