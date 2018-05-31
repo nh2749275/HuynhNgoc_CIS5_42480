@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=huynh_ngoc-project2-42480_draft2
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/huynh_ngoc-project2-42480_draft2
+CND_ARTIFACT_NAME_Debug=yahtzee_draft2
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/yahtzee_draft2
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=huynhngoc-project2-42480draft2.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/huynhngoc-project2-42480draft2.tar
+CND_PACKAGE_NAME_Debug=yahtzeedraft2.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/yahtzeedraft2.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=huynh_ngoc-project2-42480_draft2
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/huynh_ngoc-project2-42480_draft2
+CND_ARTIFACT_NAME_Release=yahtzee_draft2
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/yahtzee_draft2
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=huynhngoc-project2-42480draft2.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/huynhngoc-project2-42480draft2.tar
+CND_PACKAGE_NAME_Release=yahtzeedraft2.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/yahtzeedraft2.tar
 #
 # include compiler specific variables
 #

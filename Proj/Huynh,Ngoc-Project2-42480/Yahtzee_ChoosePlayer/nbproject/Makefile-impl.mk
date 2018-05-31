@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=CPP_Template
+PROJECTNAME=Yahtzee_ChoosePlayer
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -7,6 +7,8 @@
 
 //System Libraries
 #include <iostream>
+#include <ctime>
+
 using namespace std;
 
 //User Libraries
@@ -19,10 +21,38 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare Variables
-    
+    int players, //number of players
+        dice[6],
+        large = dice[0], //largest dice value
+        small, //smallest dice value
+        choice; //the choice to start game or quit game
     //Initialize Variables
     
     //Process/Map inputs to outputs
+     unsigned seed = time (0);
+    srand (seed); 
+    
+        cout << "Enter how many players in total" << endl;
+        cin >> players;
+        cout << "Please roll a dice once." << endl;
+        
+        for (int i = 1; i<= players; i++){
+            
+            dice[i] = (rand() % 6) + 1;
+            cout << "Player #" << i << ": " << dice[i] << endl;
+        }
+        large = dice[0];
+        for (int j = 1; j <= dice[j]; j++){
+            if (dice[j] > large)
+                large = dice[j];
+        }
+            cout << "Player #" << j << " plays first." << endl;
+            cout << "The second player is to the right of the 1st player." << endl;
+            
+        
+        
+    
+    
     
     //Output data
     

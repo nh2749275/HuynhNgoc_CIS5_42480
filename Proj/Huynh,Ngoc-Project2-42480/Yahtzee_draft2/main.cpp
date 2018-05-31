@@ -71,7 +71,7 @@ int main(int argc, char** argv) {
     while (choice != 0){
         cout << "You have 3 times to roll" << endl;
         cout << "roll #1 "  << endl;
-        for (int i = 1; i <= 5; i++){
+        for (int i = 1; i <= 6; i++){
             dice[i] = (rand() % 6) + 1;
             cout << "Dice " << i << ": " << dice[i] << endl;
         }
@@ -167,14 +167,14 @@ int main(int argc, char** argv) {
                     int sum7 = 0; // sum of all dice 
                     int* dcTemp = dice;
                     sort(dcTemp, dcTemp + 6);
-                    int temp = 0; // dice 0 2, 2, 2, 3, 5 // 3,5,2,3, 4
+                    int temp = dice[0]; // dice 0 2, 2, 2, 3, 5 // 3,5,2,3, 4
                     int total7 = 1; //total3 is number of dice that are the same
                     
                     out = true;
                     for (int a = 1; a <= 5; a++){
                         //cout << dice[a] << endl;
                         // 3 == 3
-                        sum7 += dice[a];
+                        
                         if (temp == dice[a])
                             total7++; // total3 = 3
                         else if (total7 != 3)
@@ -184,6 +184,7 @@ int main(int argc, char** argv) {
                             break;
                         } 
                         temp = dice[a]; // temp = 2;
+                        sum7 += dice[a];
                     }
                     if (total7 != 3) {
                         cout << "You don't have 3 of a kind. Please choose another field." << endl;
