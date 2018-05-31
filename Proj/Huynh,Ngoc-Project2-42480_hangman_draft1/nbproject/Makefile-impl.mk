@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Huynh,Ngoc-Project2-42480
+PROJECTNAME=Huynh,Ngoc-Project2-42480_hangman
 
 # Active Configuration
 DEFAULTCONF=Debug

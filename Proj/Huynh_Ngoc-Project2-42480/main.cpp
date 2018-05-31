@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Ngoc Huynh
- * Created on April 20, 2018, 10:20 PM
+ * Created on May 30, 2018, 11:20 PM
  * Purpose: Yahtzee Game
  */
 
@@ -10,7 +10,10 @@
 #include <cstdlib> //rand and srand
 #include <ctime> //time
 #include <algorithm> //sort
-
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <cmath>
 using namespace std;
 
 //User Libraries
