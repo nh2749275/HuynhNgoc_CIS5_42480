@@ -20,34 +20,9 @@ using namespace std;
 //Global Constants - Math/Physics Constants, Conversions,
 //                   2-D Array Dimensions
 //Function Prototypes
+int totalDice(int, int);
+int score(int, int);
 //Execution Begins Here
-
-int totalDice(int *dice, int numDice){
-    int totDice = 0;
-    for (int i = 1; i<= 5; i++){
-        if (dice[i] == numDice)
-            totDice++;
-    }
-    return totDice;
-}
-
-int score(int *dice, int numDice){
-    int choice = -1;
-    char answer;
-    int totDice = totalDice(dice, numDice);
-
-    if (totDice == 0){
-        cout << "There's no dice with number 1. Are you sure you want to enter the score? n for No, else to proceed" << endl;
-        cin >> answer;
-        if (answer == 'n'){
-            cout << "Please choose other field." << endl;
-            cin >> choice;
-        }
-    } 
-    cout << "Your score is " << totDice * numDice << endl;
-    
-    return choice;
-}
 
 int main(int argc, char** argv) {
     
@@ -55,7 +30,12 @@ int main(int argc, char** argv) {
     int total, // total score on 5 dice 
         choice, // user chooses when to start game and when to quit game
         dice[6], // dice[0], dice[1], dice[2], dice[3],dice[4], dice[5]
-        sumOf[7];// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
+        sumOf[7],// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
+        players, //number of players
+        large = dice[0], //largest dice value
+        small, //smallest dice value
+        fstPlyr, //first player
+        player[6];//player with a value of the dice
     float average; // average of score of 1 person after a certain games
     string name[3]; // name of 3 players
     
@@ -68,6 +48,32 @@ int main(int argc, char** argv) {
     cout << "1. Press 1 to start game" << endl;
     cout << "0. Press 0 to quit game" << endl;
     cin >> choice;
+    do {
+        unsigned seed = time (0);
+        srand (seed); 
+    
+        cout << "Enter how many players in total" << endl;
+        cin >> players;
+        cout << "Please roll a dice once." << endl;
+        
+        for (int i = 1; i<= players; i++){
+            
+            dice[i] = (rand() % 6) + 1;
+            cout << "Player #" << i << ": " << dice[i] << endl;
+            
+        }
+        
+        cout << "The player with largest dice value goes first." << endl;
+        large = dice[0];
+        for (int j = 0; j < players; j++){
+            if (dice[j] > large)
+                large = dice[j];
+                fstPlyr = player[j];
+        }
+        cout << "Player #" << fstPlyr << " plays first." << endl;
+        cout << "The second player is to the right of the 1st player." << endl;
+    }
+    while (choice != 0);
     while (choice != 0){
         cout << "You have 3 times to roll" << endl;
         cout << "roll #1 "  << endl;
@@ -298,4 +304,29 @@ int main(int argc, char** argv) {
     //Exit stage right!
     return 0;
 }
+int totalDice(int *dice, int numDice){
+    int totDice = 0;
+    for (int i = 1; i<= 5; i++){
+        if (dice[i] == numDice)
+            totDice++;
+    }
+    return totDice;
+}
 
+int score(int *dice, int numDice){
+    int choice = -1;
+    char answer;
+    int totDice = totalDice(dice, numDice);
+
+    if (totDice == 0){
+        cout << "There's no dice with number 1. Are you sure you want to enter the score? n for No, else to proceed" << endl;
+        cin >> answer;
+        if (answer == 'n'){
+            cout << "Please choose other field." << endl;
+            cin >> choice;
+        }
+    } 
+    cout << "Your score is " << totDice * numDice << endl;
+    
+    return choice;
+}
