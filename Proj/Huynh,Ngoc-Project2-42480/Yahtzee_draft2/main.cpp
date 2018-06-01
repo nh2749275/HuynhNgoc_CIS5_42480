@@ -22,7 +22,34 @@ using namespace std;
 //Function Prototypes
 int totalDice(int, int);
 int score(int, int);
+
 //Execution Begins Here
+int totalDice(int *dice, int numDice){
+    int totDice = 0;
+    for (int i = 1; i<= 5; i++){
+        if (dice[i] == numDice)
+            totDice++;
+    }
+    return totDice;
+}
+
+int score(int *dice, int numDice){
+    int choice = -1;
+    char answer;
+    int totDice = totalDice(dice, numDice);
+
+    if (totDice == 0){
+        cout << "There's no dice with number 1. Are you sure you want to enter the score? n for No, else to proceed" << endl;
+        cin >> answer;
+        if (answer == 'n'){
+            cout << "Please choose other field." << endl;
+            cin >> choice;
+        }
+    } 
+    cout << "Your score is " << totDice * numDice << endl;
+    
+    return choice;
+}
 
 int main(int argc, char** argv) {
     // Declare Variables
@@ -32,11 +59,11 @@ int main(int argc, char** argv) {
         dice[6], // dice[0], dice[1], dice[2], dice[3],dice[4], dice[5]
         numPlrs = 6,// # of players 
         plyRoll[numPlrs],
-        sumOf[7];// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
-        
+        sumOf[7],// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
+        sum7, sum8, sum13; //sum of all dice for case 7, 8 and 13
     char    roll(char);//player with a value of the dice
     float average; // average of score of 1 person after a certain games
-    string name[3]; // name of 3 players
+    string name[6]; // name of 3 players
     
     //Randomize the dice
     srand(static_cast<unsigned int>(time(0)));
@@ -72,13 +99,14 @@ int main(int argc, char** argv) {
                 if (max == plyRoll[i])
                     cntMax++;
             }
-        } 
-        while (cntMax > 1);
+        } while (cntMax > 1);
+    }
+        
         // Player with max dice value plays first
+        
         cout << "Player #" << maxPlyr + 1 << " plays first." << endl;
-        cout << "The second player is to the right of the 1st player." << endl;""
-
-                
+        cout << "The second player is to the right of the 1st player." << endl;  
+        
         cout << "You have 3 times to roll" << endl;
         cout << "roll #1 "  << endl;
         for (int i = 1; i <= 5; i++){
@@ -176,7 +204,7 @@ int main(int argc, char** argv) {
                     int sum7 = 0; // sum of all dice 
                     int* dcTemp = dice;
                     sort(dcTemp, dcTemp + 6);
-                    int temp = dice[0]; // dice 0 2, 2, 2, 3, 5 // 3,5,2,3, 4
+                    int temp = dice[1]; // dice 0 2, 2, 2, 3, 5 // 3,5,2,3, 4
                     int total7 = 1; //total3 is number of dice that are the same
                     
                     out = true;
@@ -192,14 +220,17 @@ int main(int argc, char** argv) {
                             cout << "Your score is " << sum7 << endl;
                             break;
                         } 
-                        temp = dice[a]; // temp = 2;
-                        sum7 += dice[a];
+                        temp = dice[a]; // temp = 2
+                        sum7 += dice[5];
                     }
+                        
+                  
                     if (total7 != 3) {
                         cout << "You don't have 3 of a kind. Please choose another field." << endl;
                         cin >> choice;
                         out = false;
                     }
+                    else {cout << "Your score is " << sum7 << endl;}
                     break;
                 }
                 case 8: {
@@ -232,22 +263,18 @@ int main(int argc, char** argv) {
                     break;
                 }
                 case 9: {
-                    int sum9 = 25; 
                     cout << "Your score is 25" << endl;
                     break;
                 }
                 case 10: {
-                    int sum10 = 30;
                     cout << "Your score is 30" << endl;
                     break;
                 }
                 case 11: {
-                    int sum11 = 40;
                     cout << "Your score is 40" << endl;
                     break;
                 }
                 case 12: {
-                    int sum12; // sum of all dice 
                     int* dcTemp = dice;
                     int temp = 0; // dice 0 2, 3, (3), 3, 3 
                     int total12 = 1; //total3 is number of dice that are the same
@@ -288,6 +315,7 @@ int main(int argc, char** argv) {
                             tot13 = 1; // reset number of dices that are the same to 1
                         }
                     }
+                    
                     cout << "Your score is " << sum13 << endl;
                     break;
                 }
@@ -298,8 +326,6 @@ int main(int argc, char** argv) {
             total = sumOf[1] + sumOf[2] + sumOf[3] + sumOf[4] + sumOf[5] + sumOf[6] 
                     + sum7 + sum8 + 25 + 30 + 40 + 50 + sum13;
         }
-        
-    }
     cout << "You've finished the game! Your total score is " << total << endl;
     
     
@@ -307,37 +333,11 @@ int main(int argc, char** argv) {
     //Exit stage right!
     return 0;
 }
-char roll(char a){
+char roll(char n){
     char sum = 0;
-    for (int i = 1; i <= n; i++){
+    for (int i = 1; i <= n; i++)
         sum += rand()%6 + 1;
+    return sum;
+}
         
-    }
-        
-}
-int totalDice(int *dice, int numDice){
-    int totDice = 0;
-    for (int i = 1; i<= 5; i++){
-        if (dice[i] == numDice)
-            totDice++;
-    }
-    return totDice;
-}
 
-int score(int *dice, int numDice){
-    int choice = -1;
-    char answer;
-    int totDice = totalDice(dice, numDice);
-
-    if (totDice == 0){
-        cout << "There's no dice with number 1. Are you sure you want to enter the score? n for No, else to proceed" << endl;
-        cin >> answer;
-        if (answer == 'n'){
-            cout << "Please choose other field." << endl;
-            cin >> choice;
-        }
-    } 
-    cout << "Your score is " << totDice * numDice << endl;
-    
-    return choice;
-}
