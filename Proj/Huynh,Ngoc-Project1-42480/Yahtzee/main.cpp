@@ -52,7 +52,8 @@ int main(int argc, char** argv) {
     int total, // total score on 5 dice 
         choice, // user chooses when to start game and when to quit game
         dice[6], // dice[0], dice[1], dice[2], dice[3],dice[4], dice[5]
-        sumOf[7];// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]  
+        sumOf[7],// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6] 
+        sum7, sum8, sum13; //sum of all dice for case 7, 8 and 13
     unsigned seed = time (0);
     srand (seed); 
     total = 0;
