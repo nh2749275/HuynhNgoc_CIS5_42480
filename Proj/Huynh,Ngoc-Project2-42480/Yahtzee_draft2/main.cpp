@@ -25,56 +25,60 @@ int score(int, int);
 //Execution Begins Here
 
 int main(int argc, char** argv) {
-    
+    // Declare Variables
     //int dice1, dice2, dice3, dice4, dice5; //number on each dice after rolled 3 times
     int total, // total score on 5 dice 
         choice, // user chooses when to start game and when to quit game
         dice[6], // dice[0], dice[1], dice[2], dice[3],dice[4], dice[5]
-        sumOf[7],// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
-        players, //number of players
-        large = dice[0], //largest dice value
-        small, //smallest dice value
-        fstPlyr, //first player
-        player[6];//player with a value of the dice
+        numPlrs = 6,// # of players 
+        plyRoll[numPlrs],
+        sumOf[7];// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
+        
+    char    roll(char);//player with a value of the dice
     float average; // average of score of 1 person after a certain games
     string name[3]; // name of 3 players
     
-    unsigned seed = time (0);
-    srand (seed); 
-    total = 0;
-    for (int i = 1; i<= 6; i++){
-        sumOf[i] = 0;
-    }
+    //Randomize the dice
+    srand(static_cast<unsigned int>(time(0)));
+    
+    //Each player rolls 1 dice
+    int cntMax, // how many players have max values
+        max, // max dice value when players play 
+        maxPlyr; //the player that has the max dice value
     cout << "1. Press 1 to start game" << endl;
     cout << "0. Press 0 to quit game" << endl;
     cin >> choice;
-    do {
-        unsigned seed = time (0);
+    unsigned seed = time (0);
         srand (seed); 
-    
-        cout << "Enter how many players in total" << endl;
-        cin >> players;
-        cout << "Please roll a dice once." << endl;
-        
-        for (int i = 1; i<= players; i++){
-            
-            dice[i] = (rand() % 6) + 1;
-            cout << "Player #" << i << ": " << dice[i] << endl;
-            
+        total = 0;
+        for (int i = 1; i<= 6; i++){
+        sumOf[i] = 0;
         }
-        
-        cout << "The player with largest dice value goes first." << endl;
-        large = dice[0];
-        for (int j = 0; j < players; j++){
-            if (dice[j] > large)
-                large = dice[j];
-                fstPlyr = player[j];
-        }
-        cout << "Player #" << fstPlyr << " plays first." << endl;
-        cout << "The second player is to the right of the 1st player." << endl;
-    }
-    while (choice != 0);
     while (choice != 0){
+        do {
+            for (int i = 0; i < numPlrs; i++)
+                plyRoll[i] = roll(1);
+            //Who rolls first
+            max = plyRoll[0];
+            maxPlyr = 0;
+            for (int i = 1; i < numPlrs; i++){
+                if (plyRoll[i] > max){
+                    max = plyRoll[i];
+                    maxPlyr = i;
+                }
+            }
+            cntMax = 0;
+            for (int i = 0; i < numPlrs; i++){
+                if (max == plyRoll[i])
+                    cntMax++;
+            }
+        } 
+        while (cntMax > 1);
+        // Player with max dice value plays first
+        cout << "Player #" << maxPlyr + 1 << " plays first." << endl;
+        cout << "The second player is to the right of the 1st player." << endl;""
+
+                
         cout << "You have 3 times to roll" << endl;
         cout << "roll #1 "  << endl;
         for (int i = 1; i <= 5; i++){
@@ -93,12 +97,11 @@ int main(int argc, char** argv) {
                     cin >> cDice; 
                     if (cDice != -1) {
                         dice[cDice] = (rand() % 6) + 1;
-                        for (int i = 1; i <= 5; i++){
+                        for (int i = 1; i <= 5; i++)
                             cout << "Dice " << i << ": " << dice[i] << endl;
-                        }
-                    } else if (cDice == 0){
+                    } 
+                    else if (cDice == 0)
                         break;
-                    }
                 } 
                 if (cDice == 0){
                     break;
@@ -303,6 +306,14 @@ int main(int argc, char** argv) {
     
     //Exit stage right!
     return 0;
+}
+char roll(char a){
+    char sum = 0;
+    for (int i = 1; i <= n; i++){
+        sum += rand()%6 + 1;
+        
+    }
+        
 }
 int totalDice(int *dice, int numDice){
     int totDice = 0;

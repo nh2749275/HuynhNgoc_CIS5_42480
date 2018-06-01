@@ -21,8 +21,7 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare Variables
-    int players, //number of players
-        dice[6],
+    int dice[6],
         large = dice[0], //largest dice value
         small, //smallest dice value
         fstPlyr, //first player
@@ -31,12 +30,8 @@ int main(int argc, char** argv) {
     //Initialize Variables
     
     //Process/Map inputs to outputs
-     unsigned seed = time (0);
-    srand (seed); 
-    
-        cout << "Enter how many players in total" << endl;
-        cin >> players;
-        cout << "Please roll a dice once." << endl;
+        unsigned seed = time (0);
+        srand (seed); 
         
         for (int i = 1; i<= players; i++){
             
@@ -48,11 +43,50 @@ int main(int argc, char** argv) {
         cout << "The player with largest dice value goes first." << endl;
         large = dice[0];
         for (int j = 0; j < players; j++){
-            if (dice[j] > large)
-                large = dice[j];
-                fstPlyr = player[j];
-        }
-        cout << "Player #" << fstPlyr << " plays first." << endl;
+            if (dice[j] != dice[j+1]){
+                if (dice[j] > large)
+                    large = dice[j];
+                    fstPlyr = player[j];
+                cout << "Player #" << fstPlyr << " plays first." << endl;
+                cout << "The second player is to the right of the 1st player." << endl;
+                }
+            else {
+                cout << "Which players need to roll their dice again since they're tied?";
+                cout << "Enter -1 to stop rolling" << endl;
+            }
+                
+                if (dice[j] == dice[j+1]){
+                    
+                    dice[j+1] = (rand() % 6) + 1;
+                    cout << "Player #" << j + 1 << " plays first" << endl;
+                }
+        
+                cout << "Player #" << fstPlyr << " plays first." << endl;
+                cout << "The second player is to the right of the 1st player." << endl;
+            }
+            int nDice = 0; // players re-roll their dice -> new dice values
+            while (nDice != -1){
+                cin >> nDice;
+                if (nDice != -1) {
+                        dice[nDice] = (rand() % 6) + 1;
+                        for (int i = 1; i <= 5; i++)
+                            cout << "Dice " << i << ": " << dice[i] << endl;
+                    } 
+                else if (nDice == 0)
+                    break;
+            }
+            
+                if (dice[j] != dice[j+1]){
+                    if (dice[j] > large)
+                    large = dice[j];
+                    fstPlyr = player[j];
+                }
+                if (dice[j] == dice[j+1]){
+                    
+                    dice[j+1] = (rand() % 6) + 1;
+                    cout << "Player #" << j + 1 << " plays first" << endl;
+                }
+        
         cout << "The second player is to the right of the 1st player." << endl;
             
         
