@@ -64,7 +64,7 @@ int main(int argc, char** argv) {
         howmany, // number of dice roll for roll #2 and roll #3
         sumOf[7],// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
         sum7, sum8, sum13; //sum of all dice for case 7, 8 and 13
-    char    roll(char);//player with a value of the dice
+    char roll(char);//player with a value of the dice
     float average; // average of score of 1 person after a certain games
     string name[6], // name of 3 players
            plyFrst; // the name of the first player
@@ -84,13 +84,36 @@ int main(int argc, char** argv) {
         for (int i = 1; i<= 6; i++){
         sumOf[i] = 0;
         }
-    
+    if (choice == 1){
+        stdard();
+        cout << endl;
+        
+         
+        do {
+            for (int i = 0; i < 6; i++)
+                plyRoll[i] = roll(1);
+            //Who rolls first
+            max = plyRoll[0];
+            maxPlyr = 0;
+            for (int i = 1; i < numPlrs; i++){
+                if (plyRoll[i] > max){
+                    max = plyRoll[i];
+                    maxPlyr = i;
+                    plyFrst = name[i];
+                }
+            }
+            cntMax = 0;
+            for (int i = 0; i < numPlrs; i++){
+                if (max == plyRoll[i])
+                    cntMax++;
+            }
+        } while (cntMax > 1);
+    }
     while (choice != 0){    
         // Player with max dice value plays first
         
-        cout << name[6] << " plays first." << endl;
-         
-        for (int a = maxPlyr + 1; a <= 6; a++){
+        cout << "Player #" << maxPlyr << " plays first." << endl;
+        for (int a = 1; a <= 6; a++){
             cout << "Player #" << a << endl;
         cout << "You have 3 times to roll" << endl;
         cout << "roll #1 "  << endl;
