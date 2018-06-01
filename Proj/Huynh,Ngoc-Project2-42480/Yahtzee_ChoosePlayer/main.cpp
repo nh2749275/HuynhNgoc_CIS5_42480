@@ -25,6 +25,8 @@ int main(int argc, char** argv) {
         dice[6],
         large = dice[0], //largest dice value
         small, //smallest dice value
+        fstPlyr, //first player
+        player[6],//player with a value of the dice
         choice; //the choice to start game or quit game
     //Initialize Variables
     
@@ -40,14 +42,18 @@ int main(int argc, char** argv) {
             
             dice[i] = (rand() % 6) + 1;
             cout << "Player #" << i << ": " << dice[i] << endl;
+            
         }
+        
+        cout << "The player with largest dice value goes first." << endl;
         large = dice[0];
-        for (int j = 1; j <= dice[j]; j++){
+        for (int j = 0; j < players; j++){
             if (dice[j] > large)
                 large = dice[j];
+                fstPlyr = player[j];
         }
-            cout << "Player #" << j << " plays first." << endl;
-            cout << "The second player is to the right of the 1st player." << endl;
+        cout << "Player #" << fstPlyr << " plays first." << endl;
+        cout << "The second player is to the right of the 1st player." << endl;
             
         
         

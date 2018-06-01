@@ -71,7 +71,7 @@ int main(int argc, char** argv) {
     while (choice != 0){
         cout << "You have 3 times to roll" << endl;
         cout << "roll #1 "  << endl;
-        for (int i = 1; i <= 6; i++){
+        for (int i = 1; i <= 5; i++){
             dice[i] = (rand() % 6) + 1;
             cout << "Dice " << i << ": " << dice[i] << endl;
         }
