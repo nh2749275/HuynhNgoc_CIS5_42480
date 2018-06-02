@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Ngoc Huynh
  * Created on May 31, 2018, 12:20 AM
- * Purpose: Yahtzee Game
+ * Purpose: Yahtzee Game with some special rules
  */
 
 //System Libraries
@@ -23,7 +23,7 @@ using namespace std;
 int totalDice(int, int);
 int score(int, int);
 void stdard(); //defaulted argument; 5 dice and 6-faced dice
-
+void report(string[][2], int); //report score for each person
 
 //Execution Begins Here
 int totalDice(int *dice, int numDice){
@@ -36,6 +36,7 @@ int totalDice(int *dice, int numDice){
     return totDice;
 }
 
+// Search the dice if there's a specific value:
 int score(int *dice, int numDice){
     int choice = -1;
     char answer;
@@ -81,21 +82,23 @@ int main(int argc, char** argv) {
     unsigned seed = time (0);
         srand (seed); 
         total = 0;
-        for (int i = 1; i<= 6; i++){
+        for (int i = 0; i< 7; i++){
         sumOf[i] = 0;
         }
     if (choice == 1){
         stdard();
         cout << endl;
         cout << "Enter names of 3 players" << endl;
-        
+        for (int c = 0; c < 3; c++){
+            cout << "Player #" << c + 1 << ": ";
+            cin >> name[c];}
         do {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 3; i++)
                 plyRoll[i] = roll(1);
             //Who rolls first
             max = plyRoll[0];
             maxPlyr = 0;
-            for (int i = 1; i < numPlrs; i++){
+            for (int i = 0; i < numPlrs; i++){
                 if (plyRoll[i] > max){
                     max = plyRoll[i];
                     maxPlyr = i;
@@ -111,10 +114,10 @@ int main(int argc, char** argv) {
     }
     while (choice != 0){    
         // Player with max dice value plays first
-        
-        cout << "Player #" << maxPlyr << " plays first." << endl;
-        for (int a = 1; a <= 3; a++){
-            cout << "Player #" << a << endl;
+       
+        cout << "Player " << plyFrst << " plays first." << endl;
+        for (int a = 0; a < 3; a++){
+            cout << "Player #" << a + 1 << endl;
         cout << "You have 3 times to roll" << endl;
         cout << "roll #1 "  << endl;
         for (int i = 1; i <= 5; i++){
@@ -264,9 +267,9 @@ int main(int argc, char** argv) {
                             total8 = 1; // reset number of dices that are the same to 1}
                         else {
                             cout << "Your score is " << sum8 << endl;
-                            break; 
                         }
                         temp = dice[a]; // temp = 2;
+                        sum8 += dice[a];
                     }
                     if (total8 != 4) { 
                             cout << "You don't have 4 of a kind. Please choose another field." << endl;
@@ -338,14 +341,16 @@ int main(int argc, char** argv) {
             }
         }
         }
-        for (int b = 1; b <= 6; b++){
+        for (int b = 1; b <= 3; b++){
             total = sumOf[1] + sumOf[2] + sumOf[3] + sumOf[4] + sumOf[5] + sumOf[6] 
                     + sum7 + sum8 + 25 + 30 + 40 + 50 + sum13;
-            cout << "Player #1's total score is: " << total << endl;
+            cout << "Player # " << b << "has total score of: " << total << endl;
         }
     }
     cout << "You've finished the game! Your total score is " << total << endl;
     cout << "The scores of all players are: " << endl; 
+    report(name[][2],total[]);
+    cout << endl;
     
     
     //Exit stage right!
@@ -361,4 +366,13 @@ void stdard(){
     cout << "Dice number = 5" << endl;
     cout << "Dice is 6-valued dice" << endl;
 }
-
+void report(string name,int score){
+    string player[3];
+    int result[2],
+        report[5][4];
+    for (int x = 0; x < 5; x++){
+        for (int y = 0; y < 4; y++)
+            cout << report[3][2] << endl;
+    }
+}
+    
