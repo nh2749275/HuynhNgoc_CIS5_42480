@@ -64,7 +64,8 @@ int main(int argc, char** argv) {
         plyRoll[numPlrs],
         howmany, // number of dice roll for roll #2 and roll #3
         sumOf[7],// sumOf[1], sumOf[2], sumOf[3],sumOf[4], sumOf[5], sumOf[6]
-        sum7, sum8, sum13; //sum of all dice for case 7, 8 and 13
+        sum7, sum8, sum13, //sum of all dice for case 7, 8 and 13
+        TotPlyr; //total score of 3 players in this game
     char roll(char);//player with a value of the dice
     float average; // average of score of 1 person after a certain games
     string name[3], // name of 3 players
@@ -349,10 +350,13 @@ int main(int argc, char** argv) {
     }
     cout << "You've finished the game! Your total score is " << total << endl;
     cout << "The scores of all players are: " << endl; 
-    report(name[][2],total[]);
+    report(name,total);
     cout << endl;
     
+    TotPlyr += total;
+    average = TotPlyr/3;
     
+    cout << "Average score of this game between 3 players is: " << average << endl;
     //Exit stage right!
     return 0;
 }
@@ -368,11 +372,12 @@ void stdard(){
 }
 void report(string name,int score){
     string player[3];
-    int result[2],
-        report[5][4];
-    for (int x = 0; x < 5; x++){
-        for (int y = 0; y < 4; y++)
-            cout << report[3][2] << endl;
-    }
+    int result[2];
+    cout << "Name"      "Result" << endl;
+    cout << "__________________ " << endl;
+    for (int type = 0; type < 13; type++)
+        cout << player[type] << "\t" << setw(9) << result[type] << endl;
+  
+    
 }
     
